@@ -25,8 +25,6 @@ namespace AprendendoRedis
                     var perguntaId = m.Message.ToString().Substring(1, m.Message.ToString().IndexOf(":") - 1);
                     var resposta = Convert.ToInt32(perguntaId) * 2;
                     var respFinal = $"P{perguntaId} Equipe5 {resposta}";
-                    Console.WriteLine(respFinal);
-                    //Publisher("perguntas", respFinal);
                     db.HashSet($"P{perguntaId}", "Equipe5", resposta);
                 }
             });
